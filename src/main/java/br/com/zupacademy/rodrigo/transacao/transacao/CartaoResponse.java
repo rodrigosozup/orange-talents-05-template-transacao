@@ -5,6 +5,13 @@ public class CartaoResponse {
     private String id;
     private String email;
 
+    public  CartaoResponse(){}
+
+    public  CartaoResponse(Cartao cartao){
+        this.id = cartao.getId();
+        this.email = cartao.getEmail();
+    }
+
     public String getId() {
         return id;
     }

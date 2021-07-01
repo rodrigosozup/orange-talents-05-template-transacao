@@ -11,6 +11,15 @@ public class TransacaoResponse {
     private EstabelecimentoResponse estabelecimento;
     private CartaoResponse cartao;
 
+    public TransacaoResponse(){}
+
+    public TransacaoResponse(Transacao transacao){
+        this.id = transacao.getId();
+        this.valor = transacao.getValor();
+        this.efetivadaEm = transacao.getEfetivadaEm();
+        this.estabelecimento = new EstabelecimentoResponse(transacao.getEstabelecimento());
+        this.cartao = new CartaoResponse(transacao.getCartao());
+    }
     public String getId() {
         return id;
     }
